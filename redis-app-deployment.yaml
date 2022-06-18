@@ -11,18 +11,18 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      name: voting-app-pod
+      name: redis-app-pod
       app: demo-voting-app
     
   template:
     metadata:
-      name: voting-app-pod
+      name: redis-app-pod
       labels:
-        name: voting-app-pod
+        name: redis-app-pod
         app: demo-voting-app
     spec:
       containers:
-        - name: voting-app
-          image: kodekloud/examplevotingapp_vote:v1
+        - name: redis
+          image: redis
           ports:
-            - containerPort: 80
+            - containerPort: 6379
